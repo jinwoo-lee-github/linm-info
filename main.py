@@ -1,8 +1,33 @@
 import numpy as np
 import streamlit as st
 import datetime
+footer="""<style>
+a:link , a:visited{
+color: blue;
+background-color: transparent;
+text-decoration: underline;
+}
 
+a:hover,  a:active {
+color: red;
+background-color: transparent;
+text-decoration: underline;
+}
 
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: white;
+color: black;
+text-align: center;
+}
+</style>
+<div class="footer">
+<p>Developed with ❤ by <a style='text-align: center;' href="https://happybot.kr/" target="_blank">행복디코</a></p>
+</div>
+"""
 def get_week_display(week):
     # 현재 날짜와 시간을 가져옵니다
     now = datetime.datetime.now()
@@ -16,10 +41,10 @@ def get_week_display(week):
     return display
 
 
-st.title('lineage m')
+st.title('Lineage m')
 st.markdown('----')
 
-# st.header('[라인 이전 결과]')
+# st.header('라인 이전 결과')
 
 # week_number = [get_week_display(0), get_week_display(1), get_week_display(2), get_week_display(3)]
 
@@ -32,6 +57,8 @@ with col1:
     col1.subheader('파푸:질리언')
     col1.write(':red[왕]')
     col1.subheader('데스:아툰')
+    col1.write(':red[PK]')
+    col1.subheader('진기르:기르')
     col1.write(':red[PK]')
 
 with col2:
@@ -50,5 +77,19 @@ with col3:
     col3.subheader('듀크:블루')
     col3.write(':red[헉]')
 
-# Display a chat input widget.
-# st.chat_input("Say something")
+st.markdown('----')
+with st.expander("체크시간"):
+    st.write(f"켄라:케레 [확인] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    st.write(f"파푸:질리언 [확인] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    st.write(f"데스:아툰 [확인] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    st.write(f"진기르:기르 [확인] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    st.write(f"안타:하딘 [확인] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    st.write(f"데포:이실 [확인] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    st.write(f"발라:군터 [확인] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    st.write(f"판도라:라바 [확인] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    st.write(f"린드:사이하 [확인] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    st.write(f"듀크:블루 [확인] - {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+
+# st.footer('made by. 행복디코')
+st.markdown(footer,unsafe_allow_html=True)
+
